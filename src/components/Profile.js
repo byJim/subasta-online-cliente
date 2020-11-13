@@ -1,5 +1,5 @@
 import React from "react";
-import { Redirect } from 'react-router-dom';
+import { Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const Profile = () => {
@@ -16,21 +16,21 @@ const Profile = () => {
           <strong>{currentUser.username}</strong> Profile
         </h3>
       </header>
-      <p>
+      {/*<p>
         <strong>Token:</strong> {currentUser.accessToken.substring(0, 20)} ...{" "}
         {currentUser.accessToken.substr(currentUser.accessToken.length - 20)}
-      </p>
-      <p>
+      </p>*/}
+      {/* <p>
         <strong>Id:</strong> {currentUser.id}
       </p>
       <p>
         <strong>Email:</strong> {currentUser.email}
-      </p>
+      </p>*/}
       <strong>Authorities:</strong>
-      <ul>
+      {/*<ul>
         {currentUser.roles &&
           currentUser.roles.map((role, index) => <li key={index}>{role}</li>)}
-      </ul>
+      </ul>*/}
     </div>
   );
 };

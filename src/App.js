@@ -23,6 +23,7 @@ const App = () => {
   const [showAdminBoard, setShowAdminBoard] = useState(false);
 
   const { user: currentUser } = useSelector((state) => state.auth);
+  console.log(useSelector((state) => state.auth));
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -33,7 +34,7 @@ const App = () => {
 
   /*useEffect(() => {
     if (currentUser) {
-      setShowModeratorBoard(currentUser.roles.includes("user"));
+      setShowModeratorBoard(currentUser.roles.includes("admin"));
       setShowAdminBoard(currentUser.roles.includes("admin"));
     }
   }, [currentUser]);*/
