@@ -11,7 +11,6 @@ const register = (username, email, password) => {
 };
 
 const login = (email, password) => {
-  let to;
   return axios
     .post(API_URL + "login", {
       email,
@@ -26,7 +25,6 @@ const login = (email, password) => {
       let roles = temp.data[0].role;
       let id = temp.data[0].id_role;
       if (data[0].token) {
-        console.log("LocalStorage");
         localStorage.setItem(
           "user",
           JSON.stringify({
@@ -36,7 +34,7 @@ const login = (email, password) => {
           })
         );
       }
-      return response.data;
+      return { accessToken: data[0].token, id: id, roles: [roles] };
     });
 };
 

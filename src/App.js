@@ -23,7 +23,9 @@ const App = () => {
   const [showAdminBoard, setShowAdminBoard] = useState(false);
 
   const { user: currentUser } = useSelector((state) => state.auth);
+  let isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   console.log(useSelector((state) => state.auth));
+  console.log(isLoggedIn);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -32,12 +34,12 @@ const App = () => {
     });
   }, [dispatch]);
 
-  /*useEffect(() => {
+  useEffect(() => {
     if (currentUser) {
       setShowModeratorBoard(currentUser.roles.includes("admin"));
       setShowAdminBoard(currentUser.roles.includes("admin"));
     }
-  }, [currentUser]);*/
+  }, [currentUser]);
 
   const logOut = () => {
     dispatch(logout());
